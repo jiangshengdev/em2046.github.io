@@ -1,3 +1,16 @@
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+    equationNumbers: { autoNumber: "all" }
+  },
+  tex2jax: {
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    inlineMath: [['$','$']]
+  }
+});
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
 # 斐波那契数列时间复杂度计算
 
 想要计算斐波那契数列的时间复杂度需要先了解斐波那契数列的定义与算法。
@@ -6,13 +19,13 @@
 
 在数学中，斐波那契数（Fibonacci number），一般使用 $F_{n}$ 表示，构成序列后，称之为斐波那契数列（Fibonacci sequence），序列中每一个数字都是前面两个数字的和，从 0 和 1 开始。定义如下，
 
-> $$F_{0}=0,\quad F_{1}=1,$$
+> $F_{0}=0,\quad F_{1}=1,$
 >
-> $$F_{n}=F_{n-1}+F_{n-2},\quad n>1$$
+> $F_{n}=F_{n-1}+F_{n-2},\quad n>1$
 
 序列起始位置的值为：
 
-> $$0,\;1,\;1,\;2,\;3,\;5,\;8,\;13,\;21,\;34,\;55,\;89,\;144,\;\dots$$
+> $0,\ 1,\ 1,\ 2,\ 3,\ 5,\ 8,\ 13,\ 21,\ 34,\ 55,\ 89,\ 144,\ \dots$
 
 为了方便查阅，使用表格列出，前 13 位斐波那契数 $F_{n}$ 为：
 
@@ -60,23 +73,23 @@ console.log(fibonacci(40));
 
 ##### 高效解
 
-常数复杂度 $O(1)\;$，对数复杂度 $O(\log^{c}n)$。
+常数复杂度 $O(1)$，对数复杂度 $O(\log^{c}n)$。
 
 不管常数是多少，都可以看作一样：
 
-> $$O(1) = 2 = 2020 = 2020^2$$
+> $O(1) = 2 = 2020 = 2020^2$
 
 常底数可忽略：
 
-> $$\forall\quad a,b>0,\quad \log_{a}n=\log_ab\cdot\log_bn=O(\log_{b}n)$$
+> $\forall\quad a,b>0,\quad \log_{a}n=\log_ab\cdot\log_bn=O(\log_{b}n)$
 
 常数次幂可忽略：
 
-> $$\forall\quad c>0,\quad \log n^{c}=c\cdot\log n=O(\log n)$$
+> $\forall\quad c>0,\quad \log n^{c}=c\cdot\log n=O(\log n)$
 
 对数多项式可忽略次数较低者：
 
-> $$\log^{2020}n+\log^{2019}n=O(\log^{2020}n)$$
+> $\log^{2020}n+\log^{2019}n=O(\log^{2020}n)$
 
 ##### 有效解
 
@@ -84,13 +97,13 @@ console.log(fibonacci(40));
 
 多项式中常系数与低次项可忽略：
 
-> $$2020n+2020=O(n)$$
+> $2020n+2020=O(n)$
 >
-> $$(n)\times(n^{2}-n)=O(n \times n^2) = O(n^{3})$$
+> $(n)\times(n^{2}-n)=O(n \times n^2) = O(n^{3})$
 >
-> $$(2020n^{2}-2020)/(2020n)=O(n^{2}/n)=O(n)$$
+> $(2020n^{2}-2020)/(2020n)=O(n^{2}/n)=O(n)$
 >
-> $$a_{k}n^{k}+a_{k-1}n^{k-1}+\dots+a_{1}n+a_{0}=O(n^{k}),\quad a_{k}>0$$
+> $a_{k}n^{k}+a_{k-1}n^{k-1}+\dots+a_{1}n+a_{0}=O(n^{k}),\quad a_{k}>0$
 
 ##### 难解
 
@@ -112,17 +125,17 @@ JavaScript 等高级语言的**基本指令**，均等效于常数条 RAM 的**�
 
 $$
 T(n)=T(n-1)+T(n-2)+1,\quad n>1
- \label{recursion1}
+\label{recursion1}
 $$
 
 $$
 T(0)=1
- \label{recursion2}
+\label{recursion2}
 $$
 
 $$
 T(1)=1
- \label{recursion3}
+\label{recursion3}
 $$
 
 上式中 $+1$, $=1$ 中的 $1$ 均为时间复杂度。根据递归版代码中的第二个判断分支，计算 $T(n)$ 需要先计算出第 $n-1$ 位与 $n-2$ 位的结果然后求和，所以等式右边为计算 $n-1$ 位所需时间 $T(n-1)$ 加上计算 $n-2$ 位所需时间 $T(n-2)$ 再加上求和时间 1。下面两行等式 $\ref{recursion2}$ 与 $\ref{recursion3}$ 为递归基，均为 1 的时间复杂度。
@@ -133,21 +146,21 @@ $$
 
 $$
 S(n)=[T(n)+1]/2
- \label{recursion4}
+\label{recursion4}
 $$
 
 **则**
 
 $$
- S(0)=1=fib(1),\quad S(1)=1=fib(2)
- \label{recursion5}
+S(0)=1=fib(1),\quad S(1)=1=fib(2)
+\label{recursion5}
 $$
 
 **故**
 
 $$
- S(n)=S(n-1)+S(n-2)=fib(n+1)
- \label{recursion6}
+S(n)=S(n-1)+S(n-2)=fib(n+1)
+\label{recursion6}
 $$
 
 其中 $fib$ 为 fibonacci 的简写，详细计算过程如下，
@@ -223,15 +236,15 @@ $$
 设 $\{a_{n}\}$ 为斐波那契数列，根据斐波那契数列的定义可得，
 
 $$
- \forall\quad n\ge3,\quad a_{n}=a_{n-1}+a_{n-2},\quad a_{1}=a_{2}=1
- \label{general1}
+\forall\quad n\ge3,\quad a_{n}=a_{n-1}+a_{n-2},\quad a_{1}=a_{2}=1
+\label{general1}
 $$
 
 尝试构造出一个等比数列，
 
 $$
 a_{n}+p\cdot a_{n-1}=q\cdot(a_{n-1}+p\cdot a_{n-2})
- \label{general2}
+\label{general2}
 $$
 
 **$p;q$ 计算过程**
@@ -246,7 +259,7 @@ $$
 
 > 由上方两个式子
 >
-> $\begin{cases}q-p=1\\q\cdot p=1\end{cases}$
+> $\begin{cases}q-p=1\\ q\cdot p=1\end{cases}$
 >
 > 求解方程组
 >
@@ -262,43 +275,43 @@ $$
 
 $$
 \begin{cases}
- p=\frac{\sqrt{5}-1}{2}
- \\
- q=\frac{\sqrt{5}+1}{2}
- \end{cases}
- \label{general3}
+p=\frac{\sqrt{5}-1}{2}
+\\
+q=\frac{\sqrt{5}+1}{2}
+\end{cases}
+\label{general3}
 $$
 
 或
 
 $$
- \begin{cases}
- p=-\frac{1+\sqrt{5}}{2}
- \\
- q=\frac{1-\sqrt{5}}{2}
- \end{cases}
- \label{general4}
+\begin{cases}
+p=-\frac{1+\sqrt{5}}{2}
+\\
+q=\frac{1-\sqrt{5}}{2}
+\end{cases}
+\label{general4}
 $$
 
 将结果 $\ref{general3}$ 带入等式 $\ref{general2}$ 可得
 
 $$
- a_{n}+\frac{\sqrt{5}-1}{2}a_{n-1}=\frac{\sqrt{5}+1}{2}(a_{n-1}+\frac{\sqrt{5}-1}{2}\cdot a_{n-2})
- \label{general5}
+a_{n}+\frac{\sqrt{5}-1}{2}a_{n-1}=\frac{\sqrt{5}+1}{2}(a_{n-1}+\frac{\sqrt{5}-1}{2}\cdot a_{n-2})
+\label{general5}
 $$
 
 **令**
 
 $$
- b_{n-1}=a_{n}+\frac{\sqrt{5}-1}{2}a_{n-1}
- \label{general6}
+b_{n-1}=a_{n}+\frac{\sqrt{5}-1}{2}a_{n-1}
+\label{general6}
 $$
 
 **则**
 
 $$
- b_{n-1}=\frac{\sqrt{5}-1}{2}b_{n-2}
- \label{general7}
+b_{n-1}=\frac{\sqrt{5}-1}{2}b_{n-2}
+\label{general7}
 $$
 
 **$b_{n-1}$计算过程**
@@ -330,11 +343,11 @@ $$
 使用等式 $\ref{general6}$ 计算被构造的等比数列首项，等式 $\ref{general7}$ 得到公比，
 
 $$
- \begin{cases}
- 首项\quad b_{1}=a_{2}+\frac{\sqrt{5}-1}{2}a_{1}=\frac{\sqrt{5}+1}{2}
- \\
- 公比\quad Q=\frac{\sqrt{5}+1}{2}
- \end{cases}
+\begin{cases}
+首项\quad b_{1}=a_{2}+\frac{\sqrt{5}-1}{2}a_{1}=\frac{\sqrt{5}+1}{2}
+\\
+公比\quad Q=\frac{\sqrt{5}+1}{2}
+\end{cases}
 $$
 
 可得，
