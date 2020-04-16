@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "prettier": "prettier --write doc/**/*.md"
+  },
+  "name": "em2046.github.io",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/em2046/em2046.github.io",
+  "author": "em2046 <em2046@qq.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^2.0.4"
+  }
+}
