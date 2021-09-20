@@ -257,7 +257,7 @@ $$
 >
 > 由等式 $\ref{general2}$ 变形可得，
 >
-> $a_{n}=(q-p)a_{n-1}+q\cdot p\cdot a_{n-1}$
+> $a_{n}=(q-p)a_{n-1}+q\cdot p\cdot a_{n-2}$
 
 > 由上方两个式子可得，
 >
