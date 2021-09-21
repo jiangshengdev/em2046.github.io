@@ -425,3 +425,11 @@ console.log(fibonacci(40));
 ```
 
 此算法除了一个 for 循环以外，并无其他影响时间复杂度的部分，此迭代操作所需时间与 n 呈线性关系，在渐进意义下为 $O(n)$.
+
+<script src="https://utteranc.es/client.js"
+        repo="jiangshengdev/jiangshengdev.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
