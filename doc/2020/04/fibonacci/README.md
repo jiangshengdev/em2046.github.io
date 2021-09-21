@@ -318,7 +318,7 @@ $$
 **则**
 
 $$
-b_{n-1}=\frac{\sqrt{5}-1}{2}b_{n-2}
+b_{n-1}=\frac{\sqrt{5}+1}{2}b_{n-2}
 \label{general7}
 $$
 
@@ -340,13 +340,13 @@ $$
 > 由等式 $\ref{general5}$ 与 $\ref{general6}$ 可得，
 >
 > $$
-> b_{n-1}=\frac{\sqrt{5}-1}{2}(a_{n-1}+\frac{\sqrt{5}-1}{2}\cdot a_{n-2})
+> b_{n-1}=\frac{\sqrt{5}+1}{2}(a_{n-1}+\frac{\sqrt{5}-1}{2}\cdot a_{n-2})
 >  \label{general9}
 > $$
 >
 > 由等式 $\ref{general8}$ 与 $\ref{general9}$ 可得等式 $\ref{general7}$
 >
-> $b_{n-1}=\frac{\sqrt{5}-1}{2}b_{n-2}$
+> $b_{n-1}=\frac{\sqrt{5}+1}{2}b_{n-2}$
 
 使用等式 $\ref{general6}$ 计算被构造的等比数列首项，等式 $\ref{general7}$ 得到公比，
 
@@ -361,7 +361,7 @@ $$
 可得，
 
 $$
-b_{n}=(\frac{\sqrt{5}-1}{2})^{n}
+b_{n}=(\frac{\sqrt{5}+1}{2})^{n}
 \label{general10}
 $$
 
